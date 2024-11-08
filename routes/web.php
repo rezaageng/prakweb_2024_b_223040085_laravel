@@ -12,16 +12,15 @@ Route::get('/about', function () {
     return view('about', ['nama' => 'rezaa', 'title' => 'About page']);
 });
 
-Route::get('/posts/{post:slug}', function (Post $post) {
-    // $post = Post::find($slug);
-    return view('post', ['title' => 'Single post', 'post' => $post]);
+Route::get('/posts', function () {
+    return view('posts', ['title' => 'Blog page', 'posts' => Post::all()]);
 });
 
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact page']);
 });
 
-Route::get('/posts/{slug}', function ($slug) {
-    $post = Post::find($slug);
+Route::get('/posts/{post:slug}', function (Post $post) {
+    // $post = Post::find($slug);
     return view('post', ['title' => 'Single post', 'post' => $post]);
 });

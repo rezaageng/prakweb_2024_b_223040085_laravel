@@ -13,6 +13,31 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory(3)->create();
+        Category::create([
+
+            'name' => 'Web Design',
+            'slug' => 'web-Desain',
+            'color' => 'green'
+        ]);
+
+        Category::create([
+
+            'name' => 'Intelegensia Buatan',
+            'slug' => 'Intelegensia-Buatan',
+            'color' => 'blue'
+        ]);
+
+        Category::create([
+
+            'name' => 'UI UX',
+            'slug' => 'UI-UX',
+            'color' => 'red'
+        ]);
+        Category::create([
+            'name' => 'Sistem Perancangan',
+            'slug' => 'Sistem-Perancangan',
+            'color' => 'yellow'
+        ]);
+        // Category::factory(3)->create();
     }
 }
